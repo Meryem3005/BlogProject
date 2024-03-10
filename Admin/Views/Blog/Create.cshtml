@@ -1,0 +1,35 @@
+﻿@model BlogViewModel
+@{
+	ViewData["Title"] = "Create Blog";
+}
+<link rel="stylesheet" href="~/css/form.css">
+
+<form asp-controller="Blog" asp-action="Create" method="post">
+
+	<div class="container">
+
+		<div class="box1">
+			Name : <input  asp-for="@Model.Blog.Name">
+		</div>
+
+		<div class="box2">
+			<label>Content :</label>  <textarea  class="desc" id="" cols="30" rows="10" asp-for="@Model.Blog.Content"></textarea>
+		</div>
+
+		<div class="box1">
+			<label for="CategorieId">Catégorie :</label>
+			<select class="name" asp-for="@Model.Blog.CategorieId">
+				<option value="">Sélectionnez une catégorie</option>
+				@foreach (var categorie in Model.Categories)
+				{
+					<option value="@categorie.Id">@categorie.Name</option>
+				}
+			</select>
+		</div>
+
+
+
+
+		<input class="button" type="submit" value="Save" />
+	</div>
+</form>

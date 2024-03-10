@@ -1,0 +1,31 @@
+﻿@model List<Models.BlogVM>
+@{
+    ViewData["Title"] = "Blogs";
+}
+
+
+<section class="category_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                Blogs de la categorie
+            </h2>
+        </div>
+        <div class="category_container" style="left:auto; right:auto;">
+            @foreach (var item in Model)
+            {
+                <a asp-action="Detail" asp-controller="Blog" asp-route-id="@item.Id" style="text-decoration:none; color:white;">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/c1.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5 style="color:black;">@item.Name</h5>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</section>
+

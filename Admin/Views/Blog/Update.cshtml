@@ -1,0 +1,26 @@
+﻿﻿
+@model Models.BlogVM
+@{
+	ViewData["Title"] = "Modifier blog";
+}
+<link rel="stylesheet" href="~/css/form.css">
+
+<form asp-controller="Blog" asp-action="Update" method="post">
+
+	<div class="container">
+		<div class="box1">
+			Categorie : <input class="name" asp-for="@Model.Name">
+		</div>
+
+		<div class="box2">
+			<label>Content :</label>  <textarea name="content" class="desc" id="" cols="30" rows="10" asp-for="@Model.Content"></textarea>
+		</div>
+
+		<div class="box1">
+			CategorieId : <input class="name" type="text" asp-for="@Model.CategorieId">
+		</div>
+
+
+		<input class="button" type="submit" value="Save" />
+	</div>
+</form>
